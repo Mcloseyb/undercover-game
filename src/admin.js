@@ -1,5 +1,8 @@
 import { authenticate, getBanks, supabase } from './client';
 import { SUPABASE_URL, SUPABASE_KEY } from './config';
+import { initMobile } from './mobile';
+import './style.css';
+initMobile();
 const status=document.querySelector('#status');
 function message(text,error=false){status.textContent=text;status.classList.toggle('error',error);}
 async function list(){
