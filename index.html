@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0d141b">
+  <meta name="description" content="一句描述，一场推理。和朋友一起在线玩谁是卧底。">
+  <title>谁是卧底 · 朋友局</title>
+  <link rel="icon" href="%BASE_URL%icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="%BASE_URL%style.css">
+  <script type="module" src="/src/app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar"><a href="./" class="brand" aria-label="谁是卧底首页"><span class="brand-icon">?</span> 朋友局 <span class="brand-en">PARTY ROOM</span></a><span id="connection" class="connection">连接中</span></header>
+    <main id="app" aria-live="polite"><div class="loading">正在连接朋友局…</div></main>
+  </div>
+  <dialog id="form-dialog"><div id="form-content"></div></dialog>
+  <dialog id="word-dialog"><div class="dialog-body word-dialog"><span class="eyebrow">仅你可见 · 请勿展示屏幕</span><div class="secret-icon">✦</div><h2>你的词语是</h2><p id="secret-word" class="secret-word"></p><p class="muted">描述它，但别直接说出这个词。<br>你的身份，要靠大家的词来推理。</p><button class="primary full" data-action="hide-word">记住了，收起词语</button></div></dialog>
+  <div id="toast" class="toast" role="status"></div>
+</body>
+</html>

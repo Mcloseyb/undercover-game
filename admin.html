@@ -1,0 +1,9 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0d141b"><title>词库管理 · 谁是卧底</title><link rel="icon" href="%BASE_URL%icon.svg"><link rel="stylesheet" href="%BASE_URL%style.css"><script type="module" src="/src/admin.js"></script></head><body><main class="admin-shell"><div class="topbar"><a class="brand" href="./"><span class="brand-icon">?</span> 朋友局</a><a class="muted small" href="./">返回游戏 ↗</a></div><span class="eyebrow">WORD COLLECTION</span><h1>让每一局都有新鲜感</h1><p class="muted">上传主题词库，朋友们下一局就能使用。</p><section class="panel"><h2>导入词库</h2><form id="upload-form" class="stack"><div class="field"><label for="password">管理员密码</label><input type="password" id="password" name="password" minlength="12" maxlength="256" required autocomplete="off" placeholder="仅在本次上传时使用"></div><div class="field"><label for="file">JSON / CSV 文件 · UTF-8 · 最大 256 KB</label><input type="file" id="file" accept=".json,.csv" required></div><p class="hint">密码仅在服务端校验，不会写入前端或浏览器存储。每次导入会新建一个词库，不会覆盖已有词语。</p><button class="primary" type="submit" id="upload">校验并导入 →</button><p id="status" class="admin-status" role="status"></p></form></section><section class="panel"><h3>已加载的词库</h3><ul class="admin-list" id="banks"><li>正在加载…</li></ul></section><section class="panel"><h3>支持的文件格式</h3><p class="muted small">JSON 包含词库名和配对列表，至少 2 组，每个词最多 24 个字。</p><pre>{
+  "name": "水果派对",
+  "pairs": [
+    { "civilian": "苹果", "undercover": "梨子" },
+    { "civilian": "橙子", "undercover": "柚子" }
+  ]
+}</pre><p class="muted small">CSV 以文件名作为词库名：</p><pre>civilian,undercover
+苹果,梨子
+橙子,柚子</pre></section></main></body></html>
