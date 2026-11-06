@@ -66,7 +66,8 @@ async function run(name,payload={}) {
   if(busy) return false;
   busy=true;
   epoch++;
-  const buttons=[...document.querySelectorAll('button[data-action],button[type="submit"]')];
+  // Dialog controls are local actions and must remain usable during RPC requests.
+  const buttons=[...app.querySelectorAll('button[data-action],button[type="submit"]')];
   buttons.forEach(b=>b.disabled=true);
   try { const next=await action(name,payload); accept(next); return true; }
   catch(error){toast(error.message,true);return false;}
@@ -142,7 +143,7 @@ function render() {
   if(room?.phase==='finished'&&lastPhase!=='finished')$('#word-dialog').close();
   if(room?.phase==='reveal'&&revealSeen!==room.gameId){revealSeen=room.gameId;showWord();}
   lastPhase=room?.phase;
-  if(busy)document.querySelectorAll('button[data-action],button[type="submit"]').forEach(b=>b.disabled=true);
+  if(busy)app.querySelectorAll('button[data-action],button[type="submit"]').forEach(b=>b.disabled=true);
   updateTimer();
 }
 function updateTimer() {

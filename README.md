@@ -11,7 +11,7 @@
 
 首次部署已于 2026-11-06 成功，首页、CSS 和管理页均经实际 HTTPS 请求返回 200。后续部署结果见仓库 Actions 中最新的 `Deploy game to GitHub Pages`。
 
-验证结果：本地 PostgreSQL/词库测试 13 项通过；真实云端 14 组场景通过，包含 4 人整局、68 次成员 Realtime 事件和 0 次越权事件。详细范围与限制见 [TESTING.md](TESTING.md)。
+验证结果：本地 PostgreSQL/词库/弹窗测试 15 项通过；真实云端 14 组场景通过，包含 4 人整局、68 次成员 Realtime 事件和 0 次越权事件。详细范围与限制见 [TESTING.md](TESTING.md)。
 
 ## 开始一局
 
