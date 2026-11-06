@@ -105,7 +105,7 @@ function lobby() {
   const host=room.hostId===room.self.id;
   const ready=room.players.length===room.config.capacity && room.players.every(p=>p.connected);
   const bank=banks.find(b=>b.id===room.config.wordbankId);
-  return `<section><div class="room-title"><div><p>THE WAITING ROOM</p><h1>朋友到齐，就开局</h1></div><button class="ghost" data-action="leave">退出房间</button></div>
+  return `<section class="lobby"><div class="room-title"><div><p>THE WAITING ROOM</p><h1>朋友到齐，就开局</h1></div><button class="ghost" data-action="leave">退出房间</button></div>
     <div class="panel"><div class="row between"><span class="muted small">房间号</span><span class="tag">等待加入</span></div><div class="room-code">${room.code}</div><div class="share-buttons"><button class="secondary" data-action="copy-code">复制房间号</button><button class="secondary" data-action="copy-link">复制邀请链接 ↗</button></div></div>
     <div class="section-head"><h3>房间里的朋友</h3><span>${room.players.length} / ${room.config.capacity} 人</span></div>
     <div class="players-list">${room.players.map(p=>`<div class="player-row">${avatar(p)}<div class="player-info"><div class="player-name">${escape(p.nickname)} ${p.id===room.self.id?'<span class="muted small">（你）</span>':''}</div><div class="small muted">${p.connected?'已就位':'连接中，等待重连…'}</div></div>${p.id===room.hostId?'<span class="tag gold">房主</span>':''}${!p.connected&&host&&p.id!==room.self.id?`<button class="ghost danger" data-action="kick" data-id="${p.id}">移除</button>`:''}</div>`).join('')}

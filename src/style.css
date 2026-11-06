@@ -112,7 +112,8 @@ dialog::backdrop{background:#030a10c9;backdrop-filter:blur(7px)}
 .config-summary{display:grid;grid-template-columns:1fr 1fr;gap:14px;font-size:12px}
 .config-summary dt{color:var(--muted);font-size:11px}
 .config-summary dd{margin:3px 0 0}
-.lobby-bottom{position:sticky;bottom:0;z-index:2;padding:20px 0 max(12px,env(safe-area-inset-bottom));text-align:center;background:linear-gradient(transparent,var(--bg) 14px)}
+.lobby{padding-bottom:calc(150px + env(safe-area-inset-bottom))}
+.lobby-bottom{position:fixed;left:50%;bottom:0;transform:translateX(-50%);width:calc(100% - 32px);max-width:448px;z-index:2;padding:20px 0 max(12px,env(safe-area-inset-bottom));text-align:center;background:linear-gradient(transparent,var(--bg) 14px)}
 .lobby-bottom p{font-size:11px;margin-top:10px;color:var(--muted)}
 .notice{border:1px solid #75613e;background:#332d21;color:#e9d8af;padding:10px 13px;border-radius:12px;font-size:12px;margin:8px 0 16px}
 .word-dialog{text-align:center;padding:29px 24px}
@@ -211,6 +212,7 @@ dialog::backdrop{background:#030a10c9;backdrop-filter:blur(7px)}
 .app-shell{border-left:1px solid #ffffff07;border-right:1px solid #ffffff07;min-height:100dvh;padding:0 28px;background:#0d141bea}
 .home{padding-top:30px}
 .hero-art{height:220px}
+.lobby-bottom{max-width:424px}
 }
 
 @media(max-width:374px){.app-shell{padding:0 15px}
